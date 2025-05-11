@@ -1,0 +1,43 @@
+﻿<Page x:Class="WarehouseCoursework.PageFolder.AdminFolder.UserEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WarehouseCoursework.PageFolder.AdminFolder"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="548" d:DesignWidth="988"
+      Title="Редактирование пользователей">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="LoginTB"
+                 Text="{Binding LoginUser}"
+                 Grid.Row="1"
+                 md:HintAssist.Hint="Логин"
+                 md:TextFieldAssist.LeadingIcon="User" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+        <Button x:Name="ChangePasswordBtn"
+                Grid.Row="2"
+                Content="Изменить пароль"
+                Style="{StaticResource SecondBtn}"
+                Click="ChangePasswordBtn_Click" BorderBrush="#FF525252"/>
+        <Button x:Name="UserEditBtn"
+                Grid.Row="3"
+                Content="Сохранить"
+                Click="UserEditBtn_Click" Background="#FF525252"/>
+        <Button x:Name="BackBtn"
+                Grid.Row="3"
+                HorizontalAlignment="Left"
+                Margin="186,0,0,0"
+                Width="120"
+                Style="{StaticResource SecondBtn}"
+                Content="Назад"
+                Click="BackBtn_Click" BorderBrush="#FF525252"/>
+    </Grid>
+</Page>
