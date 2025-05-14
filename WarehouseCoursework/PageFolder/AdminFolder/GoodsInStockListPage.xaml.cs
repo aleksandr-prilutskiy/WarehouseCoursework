@@ -23,17 +23,14 @@ namespace WarehouseCoursework.PageFolder.AdminFolder
         {
             if (string.IsNullOrWhiteSpace(SearchTB.Text))
             {
-                MainLB.ItemsSource = App.Context.Manufacturer.ToList();
+                MainLB.ItemsSource = App.Context.Product.ToList();
             }
             else
             {
                 try
                 {
-                    MainLB.ItemsSource =
-                        App.Context.Manufacturer.
-                        Where(x => x.NameManufacturer.
-                        Contains(SearchTB.Text))
-                        .ToList();
+                    MainLB.ItemsSource = App.Context.Product.
+                        Where(x => x.NameProduct.Contains(SearchTB.Text)).ToList();
                 }
                 catch (Exception ex)
                 {

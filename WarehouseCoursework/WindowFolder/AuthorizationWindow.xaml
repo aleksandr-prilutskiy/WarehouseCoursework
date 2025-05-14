@@ -39,6 +39,9 @@
                              Foreground="DarkCyan"/>
                 <Separator Opacity="0"
                            Height="6"/>
+                <Label Content="Diplom"
+                       FontWeight="Black"
+                       FontSize="42"/>
                 <Label Content="Warehouse"
                        FontWeight="Black"
                        FontSize="42"/>

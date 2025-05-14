@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WarehouseCoursework.ClassFolder;
-using WarehouseCoursework.WindowFolder;
 
 namespace WarehouseCoursework.WindowFolder
 {
@@ -58,32 +48,17 @@ namespace WarehouseCoursework.WindowFolder
                 {
                     var user = App.Context.User.FirstOrDefault(x => x.LoginUser == LoginTB.Text);
 
-                    if (user == null ||
-                        user.PasswordUser != PasswordPB.Password)
+                    if ((user == null) || (user.PasswordUser != PasswordPB.Password))
                     {
                         MB.Error("Вы ввели неверный логин или пароль!");
                         return;
                     }
                     else
                     {
-                        switch (user.IdRole)
-                        {
-                            case 1:
-                                GV.User = user;
-                                MB.Info($"Добро пожаловать, {user.LoginUser}!");
-                                new AdminFolder.MainAdminWindow().Show();
-                                this.Close();
-                                break;
-                            case 2:
-                                GV.User = user;
-                                var staff = App.Context.Staff.FirstOrDefault(x => x.IdUser == user.IdUser);
-                                GV.Staff = staff;
-                                MB.Info($"Добро пожаловать, {user.LoginUser}!");
-                                //MB.Info($"Добро пожаловать, {staff.SurnameStaff} {staff.NameStaff}!");
-                                new StaffFolder.MainStaffWindow().Show();
-                                this.Close();
-                                break;
-                        }
+                        GV.User = user;
+                        MB.Info($"Добро пожаловать, {user.LoginUser}!");
+                        new AdminFolder.MainAdminWindow().Show();
+                        this.Close();
                     }
                 }
                 catch (Exception ex)

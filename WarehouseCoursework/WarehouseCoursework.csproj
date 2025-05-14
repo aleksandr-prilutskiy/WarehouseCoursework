@@ -167,26 +167,11 @@
     <Compile Include="PageFolder\AdminFolder\UserListPage.xaml.cs">
       <DependentUpon>UserListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\StaffFolder\ProductAddPage.xaml.cs">
-      <DependentUpon>ProductAddPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageFolder\StaffFolder\ProductEditPage.xaml.cs">
-      <DependentUpon>ProductEditPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageFolder\StaffFolder\ProductInfoPage.xaml.cs">
-      <DependentUpon>ProductInfoPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageFolder\StaffFolder\ProductListPage.xaml.cs">
-      <DependentUpon>ProductListPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WindowFolder\AdminFolder\MainAdminWindow.xaml.cs">
       <DependentUpon>MainAdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowFolder\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowFolder\StaffFolder\MainStaffWindow.xaml.cs">
-      <DependentUpon>MainStaffWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -296,22 +281,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageFolder\StaffFolder\ProductAddPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageFolder\StaffFolder\ProductEditPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageFolder\StaffFolder\ProductInfoPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageFolder\StaffFolder\ProductListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ResourceFolder\Dictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -321,10 +290,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowFolder\AuthorizationWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowFolder\StaffFolder\MainStaffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

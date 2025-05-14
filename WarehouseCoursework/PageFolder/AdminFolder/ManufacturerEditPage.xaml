@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WarehouseCoursework.PageFolder.AdminFolder"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="548" d:DesignWidth="988"
+      d:DesignHeight="548"
+      d:DesignWidth="988"
       Title="Редактирование производителя">
 
     <Grid>
@@ -27,12 +28,17 @@
                  Grid.Row="1"
                  md:HintAssist.Hint="Название"
                  md:TextFieldAssist.LeadingIcon="Factory"
-                 Text="{Binding NameManufacturer}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 Text="{Binding NameManufacturer}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <Button x:Name="EditBtn"
                 Grid.Column="1"
                 Grid.Row="2"
                 Content="Изменить"
-                Click="EditBtn_Click" Background="#FF525252"/>
+                Click="EditBtn_Click"
+                Background="#FF525252"/>
         <Button x:Name="BackBtn"
                 Grid.Column="1"
                 Grid.Row="3"

@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WarehouseCoursework.PageFolder.AdminFolder"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="548" d:DesignWidth="988"
+      d:DesignHeight="548"
+      d:DesignWidth="988"
       Title="Список товаров">
 
     <Grid>
@@ -20,13 +21,18 @@
                  md:HintAssist.Hint="Поиск"
                  md:TextFieldAssist.LeadingIcon="Search"
                  x:Name="SearchTB"
-                 TextChanged="SearchTB_TextChanged" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 TextChanged="SearchTB_TextChanged"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <Button x:Name="ProductAddBtn"
                 HorizontalAlignment="Right"
                 Margin="0,0,15,0"
                 Content="Добавить"
                 Style="{StaticResource SecondBtn}"
-                Click="ProductAddBtn_Click" BorderBrush="#FF525252"/>
+                Click="ProductAddBtn_Click"
+                BorderBrush="#FF525252"/>
         <ListBox Grid.Row="1"
                  x:Name="MainLB"
                  SelectionMode="Single"
@@ -124,7 +130,8 @@
                                        Foreground="White"
                                        TextWrapping="Wrap"
                                        Height="60">
-                                <Run Text="{Binding NameProduct}" FontWeight="Bold"/>
+                                <Run Text="{Binding NameProduct}"
+                                     FontWeight="Bold"/>
                             </TextBlock>
                             <!--<TextBlock Grid.Column="1"
                                        Grid.Row="3"

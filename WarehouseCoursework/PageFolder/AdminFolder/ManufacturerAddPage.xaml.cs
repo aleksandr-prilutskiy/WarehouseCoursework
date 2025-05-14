@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WarehouseCoursework.ClassFolder;
 using WarehouseCoursework.DataFolder;
 
@@ -46,7 +36,7 @@ namespace WarehouseCoursework.PageFolder.AdminFolder
                 try
                 {
                     AddManufacturer();
-                    MB.Info($"Производитель - {NameTB.Text} ууспешно добавлен!");
+                    MB.Info($"Производитель - {NameTB.Text} успешно добавлен!");
                     NavigationService.Navigate(new ManufacturerListPage());
                 }
                 catch (Exception ex)
@@ -62,7 +52,6 @@ namespace WarehouseCoursework.PageFolder.AdminFolder
             {
                 NameManufacturer = NameTB.Text,
             };
-
             App.Context.Manufacturer.Add(manufacturer);
             App.Context.SaveChanges();
         }

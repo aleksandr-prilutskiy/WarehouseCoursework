@@ -14,6 +14,8 @@ namespace WarehouseCoursework.WindowFolder.AdminFolder
         {
             InitializeComponent();
             UsernameLabel.Content = GV.User.LoginUser;
+            if (GV.User.IdRole != 1)
+                UserBtn.Visibility = Visibility.Hidden;
             MainFrame.Navigate(new UserListPage());
         }
 

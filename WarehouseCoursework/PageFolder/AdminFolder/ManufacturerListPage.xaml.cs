@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WarehouseCoursework.ClassFolder;
 using WarehouseCoursework.DataFolder;
 
@@ -38,11 +29,8 @@ namespace WarehouseCoursework.PageFolder.AdminFolder
             {
                 try
                 {
-                    MainLB.ItemsSource =
-                        App.Context.Manufacturer.
-                        Where(x => x.NameManufacturer.
-                        Contains(SearchTB.Text))
-                        .ToList();
+                    MainLB.ItemsSource = App.Context.Manufacturer.
+                        Where(x => x.NameManufacturer.Contains(SearchTB.Text)).ToList();
                 }
                 catch (Exception ex)
                 {
@@ -72,11 +60,11 @@ namespace WarehouseCoursework.PageFolder.AdminFolder
             else
             {
                 var selected = MainLB.SelectedValue as Manufacturer;
-                var manufacturer = App.Context.Manufacturer.FirstOrDefault(x => x.IdManufacturer == selected.IdManufacturer);
+                var manufacturer = App.Context.Manufacturer.FirstOrDefault(
+                    x => x.IdManufacturer == selected.IdManufacturer);
                 if (manufacturer != null)
                 {
                     var question = MB.Quiestion($"Вы действительно хотите удалить {manufacturer.NameManufacturer}?");
-
                     if (question)
                     {
                         try

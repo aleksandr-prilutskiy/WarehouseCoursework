@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WarehouseCoursework.PageFolder.AdminFolder"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="548" d:DesignWidth="988"
+      d:DesignHeight="548"
+      d:DesignWidth="988"
       Title="Список производителей">
 
     <Grid>
@@ -104,7 +105,8 @@
                                        VerticalAlignment="Center"
                                        Foreground="White"
                                        HorizontalAlignment="Left">
-                                <Run Text="Название: " FontWeight="Bold"/>
+                                <Run Text="Название: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding NameManufacturer}"/>
                             </TextBlock>
                         </Grid>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WarehouseCoursework.WindowFolder.AdminFolder"
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Height="700" Width="1070"
+        Height="700"
+        Width="1070"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="{x:Null}"
@@ -31,7 +32,7 @@
                              Foreground="DarkCyan"/>
                 <Separator Opacity="0"
                            Width="12"/>
-                <Label Content="Warehouse"
+                <Label Content="DiplomWarehouse"
                        FontSize="36"
                        FontWeight="Black"
                        Foreground="DarkCyan"/>
