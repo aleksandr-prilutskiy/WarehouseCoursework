@@ -30,6 +30,7 @@ namespace WarehouseCoursework.DataFolder
         public string SeriesPassportStaff { get; set; }
         public string NumberPassportStaff { get; set; }
         public int IdUser { get; set; }
+        public Nullable<short> Dismissed { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Product { get; set; }

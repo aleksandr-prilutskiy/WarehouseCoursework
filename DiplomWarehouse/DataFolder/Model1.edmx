@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище DiplomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище DB" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Manufacturer">
           <Key>
             <PropertyRef Name="IdManufacturer" />
@@ -47,6 +47,7 @@
           <Property Name="SeriesPassportStaff" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="NumberPassportStaff" Type="nvarchar" MaxLength="6" Nullable="false" />
           <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="Dismissed" Type="smallint" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -105,7 +106,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище DiplomModelContainer">
+        <EntityContainer Name="Хранилище DBContainer">
           <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -132,7 +133,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DiplomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Manufacturer">
           <Key>
             <PropertyRef Name="IdManufacturer" />
@@ -179,6 +180,7 @@
           <Property Name="SeriesPassportStaff" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NumberPassportStaff" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="Dismissed" Type="Int16" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Product_Staff" FromRole="Staff" ToRole="Product" />
           <NavigationProperty Name="User" Relationship="Self.FK_Staff_User" FromRole="Staff" ToRole="User" />
         </EntityType>
@@ -241,7 +243,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="Role" EntityType="Self.Role" />
@@ -269,9 +271,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DiplomModelContainer" CdmEntityContainer="DB1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DBContainer" CdmEntityContainer="DB3">
           <EntitySetMapping Name="Manufacturer">
-            <EntityTypeMapping TypeName="DiplomModel.Manufacturer">
+            <EntityTypeMapping TypeName="DB.Manufacturer">
               <MappingFragment StoreEntitySet="Manufacturer">
                 <ScalarProperty Name="IdManufacturer" ColumnName="IdManufacturer" />
                 <ScalarProperty Name="NameManufacturer" ColumnName="NameManufacturer" />
@@ -279,7 +281,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="DiplomModel.Product">
+            <EntityTypeMapping TypeName="DB.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
                 <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
@@ -294,7 +296,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="DiplomModel.Role">
+            <EntityTypeMapping TypeName="DB.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="NameRole" ColumnName="NameRole" />
@@ -302,7 +304,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Staff">
-            <EntityTypeMapping TypeName="DiplomModel.Staff">
+            <EntityTypeMapping TypeName="DB.Staff">
               <MappingFragment StoreEntitySet="Staff">
                 <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
                 <ScalarProperty Name="SurnameStaff" ColumnName="SurnameStaff" />
@@ -314,11 +316,12 @@
                 <ScalarProperty Name="SeriesPassportStaff" ColumnName="SeriesPassportStaff" />
                 <ScalarProperty Name="NumberPassportStaff" ColumnName="NumberPassportStaff" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Dismissed" ColumnName="Dismissed" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="DiplomModel.User">
+            <EntityTypeMapping TypeName="DB.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />

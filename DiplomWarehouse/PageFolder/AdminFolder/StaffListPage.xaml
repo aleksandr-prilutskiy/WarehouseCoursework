@@ -66,6 +66,22 @@
                             </StackPanel>
                         </MenuItem.Header>
                     </MenuItem>
+                    <MenuItem x:Name="DismissMI"
+                              Click="DismissMI_Click">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left">
+                                <md:PackIcon Kind="PersonOff"
+                                             VerticalAlignment="Center"
+                                             Width="24"
+                                             Height="24"/>
+                                <Label Content="Уволить"
+                                       FontWeight="Medium"
+                                       FontSize="16"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
                     <MenuItem x:Name="DeleteMI"
                               Click="DeleteMI_Click">
                         <MenuItem.Header>
@@ -104,53 +120,82 @@
                                 <RowDefinition/>
                                 <RowDefinition Height="10"/>
                             </Grid.RowDefinitions>
-
                             <TextBlock Grid.Column="1"
                                        Grid.Row="1"
                                        FontSize="18"
                                        Foreground="White">
-                                <Run Text="Фамилия: " FontWeight="Bold"/>
+                                <Run Text="Фамилия: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding SurnameStaff}"/>
                             </TextBlock>
-
                             <TextBlock Grid.Column="1"
                                        Grid.Row="2"
                                        FontSize="18"
                                        Foreground="White">
-                                <Run Text="Имя: " FontWeight="Bold"/>
+                                <Run Text="Имя: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding NameStaff}"/>
                             </TextBlock>
-
                             <TextBlock Grid.Column="1"
                                        Grid.Row="3"
                                        FontSize="18"
                                        Foreground="White">
-                                <Run Text="Отчество: " FontWeight="Bold"/>
+                                <Run Text="Отчество: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding MiddleNameStaff}"/>
                             </TextBlock>
-
                             <TextBlock Grid.Column="2"
                                        Grid.Row="1"
                                        FontSize="18"
                                        Foreground="White">
-                                <Run Text="Телефон: " FontWeight="Bold"/>
+                                <Run Text="Телефон: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding PhoneStaff}"/>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Dismissed}" Value="1">
+                                                <Setter Property="Text"
+                                                        Value="Сотрудник уволен                                                                                                 "/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
                             </TextBlock>
-
                             <TextBlock Grid.Column="2"
                                        Grid.Row="2"
                                        FontSize="18"
                                        Foreground="White">
-                                <Run Text="Почта: " FontWeight="Bold"/>
+                                <Run Text="Почта: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding MailStaff}"/>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Dismissed}" Value="1">
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
                             </TextBlock>
-
                             <TextBlock Grid.Column="2"
                                        Grid.Row="3"
                                        FontSize="18"
                                        Foreground="White">
-                                <Run Text="Логин: " FontWeight="Bold"/>
+                                <Run Text="Логин: "
+                                     FontWeight="Bold"/>
                                 <Run Text="{Binding User.LoginUser}"/>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Dismissed}" Value="1">
+                                                <Setter Property="Visibility"
+                                                        Value="Hidden"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
                             </TextBlock>
                         </Grid>
                     </Border>

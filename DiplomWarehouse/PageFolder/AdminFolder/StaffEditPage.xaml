@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WarehouseCoursework.PageFolder.AdminFolder"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="548" d:DesignWidth="988"
+      d:DesignHeight="548"
+      d:DesignWidth="988"
       Title="Редактирование сотрдуника">
 
     <Grid>
@@ -30,52 +31,83 @@
                  Grid.Row="1"
                  md:HintAssist.Hint="Фамилия"
                  md:TextFieldAssist.LeadingIcon="User"
-                 Text="{Binding SurnameStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="#FF020202" SelectionBrush="#FF525252"/>
+                 Text="{Binding SurnameStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="#FF020202"
+                 SelectionBrush="#FF525252"/>
         <TextBox x:Name="NameTB"
                  Grid.Column="1"
                  Grid.Row="2"
                  md:HintAssist.Hint="Имя"
                  md:TextFieldAssist.LeadingIcon="User"
-                 Text="{Binding NameStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 Text="{Binding NameStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <TextBox x:Name="MiddeNameTB"
                  Grid.Column="1"
                  Grid.Row="3"
                  md:HintAssist.Hint="Отчесто"
                  md:TextFieldAssist.LeadingIcon="User"
-                 Text="{Binding MiddleNameStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 Text="{Binding MiddleNameStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <DatePicker x:Name="DateOfBirthDP"
-                 Grid.Column="1"
-                 Grid.Row="4"
-                 md:HintAssist.Hint="Дата рождения" BorderBrush="#FF525252" Foreground="Black"/>
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    md:HintAssist.Hint="Дата рождения"
+                    BorderBrush="#FF525252"
+                    Foreground="Black"/>
         <TextBox x:Name="PhoneTB"
                  Grid.Column="1"
                  Grid.Row="5"
                  md:HintAssist.Hint="Номер телефона"
                  md:TextFieldAssist.LeadingIcon="PhoneOutline"
-                 Text="{Binding PhoneStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 Text="{Binding PhoneStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <TextBox x:Name="MailTB"
                  Grid.Column="2"
                  Grid.Row="1"
                  md:HintAssist.Hint="Почта"
                  md:TextFieldAssist.LeadingIcon="EmailOutline"
-                 Text="{Binding MailStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="#FF040404" SelectionBrush="#FF525252"/>
+                 Text="{Binding MailStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="#FF040404"
+                 SelectionBrush="#FF525252"/>
         <TextBox x:Name="SeriesPassportTB"
                  Grid.Column="2"
                  Grid.Row="2"
                  md:HintAssist.Hint="Серия паспорта"
                  md:TextFieldAssist.LeadingIcon="Passport"
-                 Text="{Binding SeriesPassportStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 Text="{Binding SeriesPassportStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <TextBox x:Name="NumberPassportTB"
                  Grid.Column="2"
                  Grid.Row="3"
                  md:HintAssist.Hint="Номер паспорта"
                  md:TextFieldAssist.LeadingIcon="Passport"
-                 Text="{Binding NumberPassportStaff}" BorderBrush="#FF525252" CaretBrush="#FF525252" Foreground="Black" SelectionBrush="#FF525252"/>
+                 Text="{Binding NumberPassportStaff}"
+                 BorderBrush="#FF525252"
+                 CaretBrush="#FF525252"
+                 Foreground="Black"
+                 SelectionBrush="#FF525252"/>
         <Button x:Name="AddStaffBtn"
                 Grid.Column="2"
                 Grid.Row="4"
                 Content="Изменить"
-                Click="AddStaffBtn_Click" Background="#FF525252"/>
+                Click="AddStaffBtn_Click"
+                Background="#FF525252"/>
         <Button x:Name="BackBtn"
                 Grid.Column="2"
                 Grid.Row="5"
